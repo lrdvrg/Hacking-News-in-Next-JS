@@ -8,7 +8,10 @@ const favoritesLocalStorageKey = process.env.FAVORITES_LOCALSTORAGE_KEY || 'FAVO
 const Favorites = () => {
   const [localStorageFavorites, setLocalStorageFavorites] = useLocalStorage(favoritesLocalStorageKey, '[]');
 
-  const favorites = JSON.parse(localStorageFavorites as string);
+  let favorites: News[] = [];
+  if (typeof window !== 'undefined') {
+    favorites = JSON.parse(localStorageFavorites as string);
+  }
 
   return (
     <>
