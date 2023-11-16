@@ -15,7 +15,7 @@ const Favorites = () => {
 
   return (
     <>
-      <section className='mt-[38px] grid grid-flow-row grid-cols-2 grid-rows-1 gap-x-[30px] gap-y-10'>
+      <section className='mt-1 grid grid-flow-row grid-cols-1 xl:grid-cols-2  grid-rows-1 gap-x-[30px] gap-y-10'>
         {favorites.map((article: News, index: number) => (
           <Card key={index} article={article} localStorageFavorites={localStorageFavorites as string} setLocalStorageFavorites={setLocalStorageFavorites as (value: string) => void}></Card>
         ))}
